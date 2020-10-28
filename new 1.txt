@@ -1,0 +1,17 @@
+http://api.tvmaze.com/search/shows?q=star%20trek
+
+http://api.tvmaze.com/shows/490/episodes
+
+// show episodes
+function showEpisodes (data, elemDiv) {
+    console.log("episodes");
+    console.log(data);
+    var elemEpisodes = document.createElement("div");
+    var output = "";
+    for (episode in data) {
+        output += "<li><a href='" + data[episode].url + "'>" + data[episode].name + "</a></li>";
+    }
+    elemEpisodes.innerHTML = output;
+    elemDiv.appendChild(elemEpisodes);
+    
+} // showEpisodes
